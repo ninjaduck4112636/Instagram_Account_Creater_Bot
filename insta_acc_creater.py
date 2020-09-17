@@ -122,6 +122,12 @@ try:
                 sleep(4)
                 driver.find_element_by_xpath('//div[@class="recaptcha-checkbox-border"]').click()
                 sleep(2)
+
+
+                # have to add reCaptcha code - going to create another folder to do a new automation of reCaptcha
+                # -----------------------------------------------------------------------------------------------
+
+                
                 # Add the Files to Store the Data
                 with open('Insta_Account_Details.txt', 'a') as f:
                         # e-mail,password,username
