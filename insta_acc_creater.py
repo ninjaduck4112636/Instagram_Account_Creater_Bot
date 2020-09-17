@@ -52,6 +52,8 @@ try:
                 sleep(5)
                 # opening instagram
 
+                delay_time = list(range(0.2,1.3))
+                
                 if count==0:
                         driver.execute_script('window.open('');')
                         sleep(3)
@@ -80,17 +82,17 @@ try:
 
                 for value in e_mail_temp:
                         driver.find_element_by_xpath('//input[@aria-label="Mobile Number or Email"]').send_keys(value)
-                        sleep(0.3)
+                        sleep(choice(delay_time))
                 for value in fullname_1:
                         driver.find_element_by_xpath('//input[@aria-label="Full Name"]').send_keys(value)
-                        sleep(0.3)
+                        sleep(choice(delay_time))
                 for value in username_1:                        
                         driver.find_element_by_xpath('//input[@aria-label="Username"]').send_keys(value)
-                        sleep(0.4)
+                        sleep(choice(delay_time))
                 sleep(2)
                 for value in password_1:
                         driver.find_element_by_xpath('//input[@aria-label="Password"]').send_keys()
-                        sleep(0.5)
+                        sleep(choice(delay_time))
                 sleep(4)
                 driver.find_element_by_xpath('//button[@type="submit"]').click()
                 sleep(10)
@@ -101,15 +103,15 @@ try:
                 
                 driver.find_element_by_xpath('//select[@title="Month:"]').click()
                 driver.find_element_by_xpath('//option[@value="'+str(choice(month))+'"]').click()
-                sleep(2.3)
+                sleep(choice(delay_time))
 
                 driver.find_element_by_xpath('//select[@title="Day:"]').click()
-                sleep(0.3)
+                sleep(choice(delay_time))
                 driver.find_element_by_xpath('//option[@value="'+str(choice(day))+'"]').click()
-                sleep(1.2)
+                sleep(choice(delay_time))
 
                 driver.find_element_by_xpath('//select[@title="Year:"]').click()
-                sleep(0.7)
+                sleep(choice(delay_time))
                 driver.find_element_by_xpath('//option[@value="'+str(choice(year))+'"]').click()
                 sleep(1)
                 
@@ -134,7 +136,7 @@ try:
                 driver.switch_to_window(driver.window_handles[0])
                 for value in otp:
                         driver.find_element_by_xpath('//input[@aria-label="Confirmation Code"]').send_keys(value)
-                        sleep(0.3)
+                        sleep(choice(delay_time))
                 sleep(2)
                 driver.find_element_by_xpath('//button[contains(text(),"Next")]').click()
                 sleep(8)
