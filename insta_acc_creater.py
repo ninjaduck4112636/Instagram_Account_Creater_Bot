@@ -29,7 +29,7 @@ try:
     
         for _ in range(number_of_accounts):
                 with open('Boys_names.txt','r') as f:
-                        with open('Girl_names.txt','r') as f1:# here i have mixed both girls and boys name to generate the random names
+                        with open('Girl_names.txt','r') as f1:
                                 while f.readline().__len__()>0:
                                         lst.append(f.readline().strip('\n'))
                         while f.readline().__len__()>0:
@@ -38,7 +38,7 @@ try:
                 last_name = choice(lst).strip(' ')
                 print(first_name,last_name)
                 alpha_list = list(range(65,125))
-                alpha_list = list(map(lambda x:chr(x),alpha_list)) # use this to generate random password
+                alpha_list = list(map(lambda x:chr(x),alpha_list))
 
                 print(alpha_list)
                 password = ''
@@ -61,7 +61,7 @@ try:
                 driver.get('https://temp-mail.org/en/')
                 sleep(20)
                 if count>0:
-                        driver.find_element_by_xpath('//button[@id="click-to-delete"]').click()# refreshing the page so that new email is generated everytime
+                        driver.find_element_by_xpath('//button[@id="click-to-delete"]').click()
                 sleep(8)
 
                 driver.switch_to_window(driver.window_handles[1])
