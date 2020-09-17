@@ -72,11 +72,25 @@ try:
                 print('Switched to Instagram')
                 sleep(3)
 
-                driver.find_element_by_xpath('//input[@aria-label="Mobile Number or Email"]').send_keys(Keys.CONTROL,'v')
-                driver.find_element_by_xpath('//input[@aria-label="Full Name"]').send_keys(first_name+' '+last_name)
-                driver.find_element_by_xpath('//input[@aria-label="Username"]').send_keys(first_name+'_'+last_name+ynumber)
+
+                e_mail_temp = pyperclip.paste()
+                fullname_1 = first_name+' '+last_name
+                username_1 = first_name+'_'+last_name+ynumber
+                password_1 = password
+
+                for value in e_mail_temp:
+                        driver.find_element_by_xpath('//input[@aria-label="Mobile Number or Email"]').send_keys(value)
+                        sleep(0.3)
+                for value in fullname_1:
+                        driver.find_element_by_xpath('//input[@aria-label="Full Name"]').send_keys(value)
+                        sleep(0.3)
+                for value in username_1:                        
+                        driver.find_element_by_xpath('//input[@aria-label="Username"]').send_keys(value)
+                        sleep(0.4)
                 sleep(2)
-                driver.find_element_by_xpath('//input[@aria-label="Password"]').send_keys(password)
+                for value in password_1:
+                        driver.find_element_by_xpath('//input[@aria-label="Password"]').send_keys()
+                        sleep(0.5)
                 sleep(4)
                 driver.find_element_by_xpath('//button[@type="submit"]').click()
                 sleep(10)
@@ -121,8 +135,11 @@ try:
                 driver.find_element_by_xpath('//button[contains(text(),"Not Now")]').click()
                 sleep(4)
                 driver.find_element_by_xpath('//div[@class="recaptcha-checkbox-border"]').click()
-                sleep(2)
-
+                print('Clicked on Not-Robot checkbox')
+                sleep(8)
+                driver.find_element_by_xpath('//button[@title="Get an audio challenge"]').click()
+                print('Clicked on Audio Button')
+                '''
 
                 # have to add reCaptcha code - going to create another folder to do a new automation of reCaptcha
                 # -----------------------------------------------------------------------------------------------
@@ -165,9 +182,9 @@ try:
                 sleep(8)                        
 
                 print('Insta Account Sucessfully Created')
-                count+=1
+                count+=1'''
 except Exception as e:
         print(e)
-finally:
+'''finally:
         driver.quit()
-        print('Browser Closed')
+        print('Browser Closed')'''
