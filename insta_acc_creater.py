@@ -101,11 +101,15 @@ try:
                 
                 driver.find_element_by_xpath('//select[@title="Month:"]').click()
                 driver.find_element_by_xpath('//option[@value="'+str(choice(month))+'"]').click()
+                sleep(2.3)
 
                 driver.find_element_by_xpath('//select[@title="Day:"]').click()
+                sleep(0.3)
                 driver.find_element_by_xpath('//option[@value="'+str(choice(day))+'"]').click()
+                sleep(1.2)
 
                 driver.find_element_by_xpath('//select[@title="Year:"]').click()
+                sleep(0.7)
                 driver.find_element_by_xpath('//option[@value="'+str(choice(year))+'"]').click()
                 sleep(1)
                 
@@ -128,12 +132,14 @@ try:
                 otp = driver.find_element_by_xpath('//td/following::td/following::td/following::td/following::td/following::td/following::td/following::td/following::td/following::td/following::td/following::td/following::td/following::td').text
                 print(otp)
                 driver.switch_to_window(driver.window_handles[0])
-                driver.find_element_by_xpath('//input[@aria-label="Confirmation Code"]').send_keys(otp)
+                for value in otp:
+                        driver.find_element_by_xpath('//input[@aria-label="Confirmation Code"]').send_keys(value)
+                        sleep(0.3)
                 sleep(2)
                 driver.find_element_by_xpath('//button[contains(text(),"Next")]').click()
                 sleep(8)
-                driver.find_element_by_xpath('//button[contains(text(),"Not Now")]').click()
-                sleep(4)
+                '''driver.find_element_by_xpath('//button[contains(text(),"Not Now")]').click()
+                sleep(4)'''
                 driver.find_element_by_xpath('//div[@class="recaptcha-checkbox-border"]').click()
                 print('Clicked on Not-Robot checkbox')
                 sleep(8)
