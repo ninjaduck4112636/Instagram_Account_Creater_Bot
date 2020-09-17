@@ -51,9 +51,6 @@ try:
                 driver.get('https://www.instagram.com/accounts/emailsignup/?hl=en')
                 sleep(5)
                 # opening instagram
-
-                delay_time = list(range(0.2,1.3))
-                
                 if count==0:
                         driver.execute_script('window.open('');')
                         sleep(3)
@@ -78,7 +75,7 @@ try:
                 e_mail_temp = pyperclip.paste()
                 fullname_1 = first_name+' '+last_name
                 username_1 = first_name+'_'+last_name+ynumber
-                password_1 = password
+                delay_time = [0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0,1.1,1.2,1.3,1.4]
 
                 for value in e_mail_temp:
                         driver.find_element_by_xpath('//input[@aria-label="Mobile Number or Email"]').send_keys(value)
@@ -90,8 +87,8 @@ try:
                         driver.find_element_by_xpath('//input[@aria-label="Username"]').send_keys(value)
                         sleep(choice(delay_time))
                 sleep(2)
-                for value in password_1:
-                        driver.find_element_by_xpath('//input[@aria-label="Password"]').send_keys()
+                for value in password:
+                        driver.find_element_by_xpath('//input[@aria-label="Password"]').send_keys(value)
                         sleep(choice(delay_time))
                 sleep(4)
                 driver.find_element_by_xpath('//button[@type="submit"]').click()
@@ -102,16 +99,17 @@ try:
                 day = list(range(1,28))
                 
                 driver.find_element_by_xpath('//select[@title="Month:"]').click()
+                sleep(2.3)
                 driver.find_element_by_xpath('//option[@value="'+str(choice(month))+'"]').click()
                 sleep(choice(delay_time))
 
                 driver.find_element_by_xpath('//select[@title="Day:"]').click()
-                sleep(choice(delay_time))
+                sleep(1.6)
                 driver.find_element_by_xpath('//option[@value="'+str(choice(day))+'"]').click()
                 sleep(choice(delay_time))
 
                 driver.find_element_by_xpath('//select[@title="Year:"]').click()
-                sleep(choice(delay_time))
+                sleep(2.1)
                 driver.find_element_by_xpath('//option[@value="'+str(choice(year))+'"]').click()
                 sleep(1)
                 
@@ -139,7 +137,7 @@ try:
                         sleep(choice(delay_time))
                 sleep(2)
                 driver.find_element_by_xpath('//button[contains(text(),"Next")]').click()
-                sleep(8)
+                sleep(18)
                 '''driver.find_element_by_xpath('//button[contains(text(),"Not Now")]').click()
                 sleep(4)'''
                 driver.find_element_by_xpath('//div[@class="recaptcha-checkbox-border"]').click()
