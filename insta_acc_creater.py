@@ -138,59 +138,54 @@ try:
                 sleep(2)
                 driver.find_element_by_xpath('//button[contains(text(),"Next")]').click()
                 sleep(18)
-                '''driver.find_element_by_xpath('//button[contains(text(),"Not Now")]').click()
-                sleep(4)'''
-                driver.find_element_by_xpath('//div[@class="recaptcha-checkbox-border"]').click()
-                print('Clicked on Not-Robot checkbox')
-                sleep(8)
-                driver.find_element_by_xpath('//button[@title="Get an audio challenge"]').click()
-                print('Clicked on Audio Button')
-                '''
+                # driver.find_element_by_xpath('//button[contains(text(),"Not Now")]').click()
+                # sleep(4)
+                
 
                 # have to add reCaptcha code - going to create another folder to do a new automation of reCaptcha
                 # -----------------------------------------------------------------------------------------------
 
                 
-                # Add the Files to Store the Data
-                with open('Insta_Account_Details.txt', 'a') as f:
-                        # e-mail,password,username
-                        f.write(pyperclip.paste()+','+password+','+first_name+'_'+last_name+ynumber+'\n')
+                # # Add the Files to Store the Data
+                # with open('Insta_Account_Details.txt', 'a') as f:
+                #         # e-mail,password,username
+                #         f.write(pyperclip.paste()+','+password+','+first_name+'_'+last_name+ynumber+'\n')
 
-                #driver.switch_to_window(driver.window_handles[1])
-                #print('Switched to TempMail')
-                #driver.close()
-                #print('TempMail Tab Closed')
-                #sleep(2)
-                #driver.switch_to_window(driver.window_handles[0])
-                #sleep(3)
+                # #driver.switch_to_window(driver.window_handles[1])
+                # #print('Switched to TempMail')
+                # #driver.close()
+                # #print('TempMail Tab Closed')
+                # #sleep(2)
+                # #driver.switch_to_window(driver.window_handles[0])
+                # #sleep(3)
 
-                sleep(6)
-                random_number = random.randint(10,27)
-                x_path = '//button[text()="Follow"]'
+                # sleep(6)
+                # random_number = random.randint(10,27)
+                # x_path = '//button[text()="Follow"]'
 
 
-                for _ in range(random_number+1):
-                        driver.find_element_by_xpath(x_path).click()
-                        x_path += '/following::button'
-                        print('Followed {} Person'.format(_))
-                        random_time = random.randint(5,15)
-                        sleep(random_time)
+                # for _ in range(random_number+1):
+                #         driver.find_element_by_xpath(x_path).click()
+                #         x_path += '/following::button'
+                #         print('Followed {} Person'.format(_))
+                #         random_time = random.randint(5,15)
+                #         sleep(random_time)
 
-                driver.find_element_by_xpath('//img[@alt="{}\'s profile picture"]'.format(user_name)).click()
-                print('Profile Icon Clicked')
-                sleep(10)
-                driver.find_element_by_xpath('//div[contains(text(),"Log Out")]').click()
-                #driver.find_element_by_xpath('//button[@type="button"]').click()
-                #print('Clicked on Setting\'s')
-                #sleep(1)
-                #driver.find_element_by_xpath('//button[contains(text(),"Log Out")]').click()
-                print('Logged Out of Account')
-                sleep(8)                        
+                # driver.find_element_by_xpath('//img[@alt="{}\'s profile picture"]'.format(user_name)).click()
+                # print('Profile Icon Clicked')
+                # sleep(10)
+                # driver.find_element_by_xpath('//div[contains(text(),"Log Out")]').click()
+                # #driver.find_element_by_xpath('//button[@type="button"]').click()
+                # #print('Clicked on Setting\'s')
+                # #sleep(1)
+                # #driver.find_element_by_xpath('//button[contains(text(),"Log Out")]').click()
+                # print('Logged Out of Account')
+                # sleep(8)                        
 
-                print('Insta Account Sucessfully Created')
-                count+=1'''
+                # print('Insta Account Sucessfully Created')
+                # count+=1
 except Exception as e:
         print(e)
-'''finally:
-        driver.quit()
-        print('Browser Closed')'''
+# finally:
+#         driver.quit()
+#         print('Browser Closed')
