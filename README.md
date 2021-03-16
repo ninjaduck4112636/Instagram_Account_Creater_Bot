@@ -1,6 +1,6 @@
 # Instagram Account Creation Bot :rainbow:
 
-### Clone the repo
+### *Clone the repo
 ### install the nessary modules using the command ```pip install module_name```
 ### ```selenium
 pyperclip```
